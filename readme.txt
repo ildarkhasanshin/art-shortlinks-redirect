@@ -1,5 +1,5 @@
 === Art Shortlinks Redirect ===
-Contributors: artabr
+Contributors: artabr, ildarkhasanshin
 Donate link:
 Tags: woocommerce, mode catalog
 Requires at least: 4.8
