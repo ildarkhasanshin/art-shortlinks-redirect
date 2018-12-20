@@ -116,20 +116,22 @@ class ASR_Admin_Columns {
 					</span>
 					<span class="asr-url-redirect-link" id="asr-url-redirect-link-<?php echo absint( $post_id ); ?>"><?php echo esc_url( get_permalink( $post_id ) ); ?></span>
 				</div>
-				<div class="short-url-redirect">
-					<span
-						class="asr-clipboard" data-clipboard-target="#asr-short-url-redirect-<?php echo absint( $post_id ); ?>" data-clipboard-action="copy"
-						title="Скопировать в буфер обмена" aria-label="Скопировано">
-						<img
-							src="<?php echo esc_url( ASR_PLUGIN_URI ) . '/assets/images/clippy.svg'; ?>"
-							alt="Скопировать в буфер обмена">
-					</span>
-					<span class="asr-url-redirect-link" id="asr-short-url-redirect-<?php echo absint( $post_id ); ?>">
-						<small>
-							<?php echo esc_url( wp_get_shortlink( $post_id ) ); ?>
-						</small>
-					</span>
-				</div>
+				<?php if ( ! empty(esc_url(wp_get_shortlink($post_id))) ): ?>
+                    <div class="short-url-redirect">
+                        <span
+                                class="asr-clipboard" data-clipboard-target="#asr-short-url-redirect-<?php echo absint($post_id); ?>" data-clipboard-action="copy"
+                                title="Скопировать в буфер обмена" aria-label="Скопировано">
+                            <img
+                                    src="<?php echo esc_url(ASR_PLUGIN_URI).'/assets/images/clippy.svg'; ?>"
+                                    alt="Скопировать в буфер обмена">
+                        </span>
+                        <span class="asr-url-redirect-link" id="asr-short-url-redirect-<?php echo absint($post_id); ?>">
+                            <small>
+                                <?php echo esc_url(wp_get_shortlink($post_id)); ?>
+                            </small>
+                        </span>
+                    </div>
+			    <?php endif; ?>
 				<?php
 
 				break;
